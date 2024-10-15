@@ -1,0 +1,17 @@
+{% extends "core/base.html" %}
+
+{% block title %}Rooms | {% endblock %}
+
+{% block content %}
+    <h1 class="text-center">Rooms</h1>
+    {% for room in rooms %}
+        <div class="card my-3">
+            <div class="card-header">
+                {{ room.name }}
+            </div>
+            <div class="card-body">
+                <a href="{% url 'room' room.slug %}" class="btn btn-primary">Join</a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
